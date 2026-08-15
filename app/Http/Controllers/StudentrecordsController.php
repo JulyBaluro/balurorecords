@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\studentrecords;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class StudentrecordsController extends Controller
 {
@@ -13,7 +14,7 @@ class StudentrecordsController extends Controller
     public function index()
     {
         return Inertia::render('dashboard', [
-            'students' => students::latest()->get(),
+            'students' => studentrecords::latest()->get(),
         ]);
     }
 
